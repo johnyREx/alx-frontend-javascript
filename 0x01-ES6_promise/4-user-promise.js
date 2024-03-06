@@ -1,9 +1,9 @@
-export default async function function signUpUser(firstName, lastName) {
-	return new.promise(resolve) => {
-		const dict = {
-			firstname,
-			lastName,
-		};
-		resolve(dict);
-	});
+export default async function signUpUser(firstName, lastName) {
+  return new Promise((resolve) => {
+    const dict = {
+      firstName,
+      lastName,
+    };
+    resolve(dict);
+  });
 }
