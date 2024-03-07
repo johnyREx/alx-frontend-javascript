@@ -1,5 +1,5 @@
 export default class Building {
-  constructor(sqft = 0) {
+  constructor(sqft = 100) {
     if (this.constructor !== Building
       && typeof this.evacuationWarningMessage !== 'function') {
       throw new TypeError('Class extending Building must ovveride evacuationWarnningMessage');
