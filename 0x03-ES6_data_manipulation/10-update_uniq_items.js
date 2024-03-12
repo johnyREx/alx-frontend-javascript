@@ -1,25 +1,14 @@
-export default function updateUniqueItems(groceries) {
-  if (!(groceries instanceof Map)) {
-    throw new Error('Cannot process');
-  }
+export default function updateUniqueItems(map) {
+  const list = map;
 
-  const updatedMap = new Map();
-
-  groceries.forEach((quantity, item) => {
-    if (item !== 'name' && item !== 'quantity') {
-      if (quantity === 1) {
-        updatedMap.set(item, 100);
-      } else {
-        updatedMap.set(item, quantity);
+  if (list instanceof Map) {
+    for (const [key, value] of list) {
+      if (value === 1) {
+        list.set(key, 100);
       }
     }
-  });
-
-  if (groceries.has('name')) {
-    updatedMap.set('name', groceries.get('name'));
+  } else {
+    throw new Error('Cannot process');
   }
-  if (groceries.has('quantity')) {
-    updatedMap.set('quantity', groceries.get('quantity'));
-  }
-  return updatedMap;
+  return list;
 }
